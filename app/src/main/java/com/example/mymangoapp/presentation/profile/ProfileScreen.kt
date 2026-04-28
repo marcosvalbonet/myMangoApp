@@ -15,6 +15,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -23,6 +24,7 @@ import com.example.mymangoapp.domain.model.User
 import com.example.mymangoapp.presentation.common.UiState
 import com.example.mymangoapp.presentation.products.ErrorContent
 import com.example.mymangoapp.presentation.products.LoadingContent
+import com.example.mymangoapp.R
 
 @Composable
 fun ProfileScreen(
@@ -106,13 +108,13 @@ private fun ProfileContent(
             ) {
                 Column {
                     Text(
-                        text = "Productos Favoritos",
+                        text = stringResource(R.string.profile_favorite_products),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = MaterialTheme.colorScheme.onErrorContainer
                     )
                     Text(
-                        text = "Items guardados en tu lista",
+                        text = stringResource(R.string.profile_items_saved),
                         style = MaterialTheme.typography.bodySmall,
                         color = MaterialTheme.colorScheme.onErrorContainer.copy(alpha = 0.7f)
                     )
@@ -144,7 +146,7 @@ private fun ProfileContent(
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(
-                    text = "Información de contacto",
+                    text = stringResource(R.string.profile_contact_info),
                     style = MaterialTheme.typography.titleSmall,
                     fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.primary,
@@ -152,19 +154,19 @@ private fun ProfileContent(
                 )
                 ProfileInfoRow(
                     icon = { Icon(Icons.Outlined.Email, contentDescription = null, modifier = Modifier.size(20.dp)) },
-                    label = "Email",
+                    label = stringResource(R.string.profile_email),
                     value = user.email
                 )
                 HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
                 ProfileInfoRow(
                     icon = { Icon(Icons.Outlined.Phone, contentDescription = null, modifier = Modifier.size(20.dp)) },
-                    label = "Teléfono",
+                    label = stringResource(R.string.profile_phone),
                     value = user.phone
                 )
                 HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
                 ProfileInfoRow(
                     icon = { Icon(Icons.Outlined.LocationOn, contentDescription = null, modifier = Modifier.size(20.dp)) },
-                    label = "Dirección",
+                    label = stringResource(R.string.profile_address),
                     value = "${user.street}, ${user.city} ${user.zipcode}"
                 )
             }

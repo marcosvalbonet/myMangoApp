@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">MyMangoApp</string>
+    <string name="profile_favorite_products">Productos Favoritos</string>
+    <string name="profile_items_saved">Items guardados en tu lista</string>
+    <string name="profile_contact_info">Información de contacto</string>
+    <string name="profile_email">Email</string>
+    <string name="profile_phone">Teléfono</string>
+    <string name="profile_address">Dirección</string>
+    <string name="products_remove_favorite">Quitar de favoritos</string>
+    <string name="products_add_favorite">Añadir a favoritos</string>
+    <string name="products_error_message">Algo salió mal</string>
+    <string name="favorites_empty_message">No hay productos en favoritos</string>
+    <string name="common_retry">Reintentar</string>
+    <string name="favorites_products_saved">%1$d producto(s) guardado(s)</string>
+    <string name="favorites_empty_message_yet">Sin favoritos aún</string>
+    <string name="favorites_add_to_favorites_press">Añade a favoritos pulsando el corazón</string>
 </resources>

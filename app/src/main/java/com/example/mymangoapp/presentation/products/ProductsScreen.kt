@@ -14,6 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -22,6 +23,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import com.example.mymangoapp.domain.model.Product
 import com.example.mymangoapp.presentation.common.UiState
+import com.example.mymangoapp.R
 
 @Composable
 fun ProductsScreen(
@@ -118,8 +120,8 @@ fun ProductCard(
                 Icon(
                     imageVector = if (product.isFavorite) Icons.Filled.Favorite
                     else Icons.Outlined.FavoriteBorder,
-                    contentDescription = if (product.isFavorite) "Quitar de favoritos"
-                    else "Añadir a favoritos",
+                    contentDescription = if (product.isFavorite) stringResource(R.string.products_remove_favorite)
+                    else stringResource(R.string.products_add_favorite),
                     tint = if (product.isFavorite) MaterialTheme.colorScheme.error
                     else MaterialTheme.colorScheme.onSurfaceVariant
                 )
@@ -156,7 +158,7 @@ fun ErrorContent(
         )
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = "Algo salió mal",
+            text = stringResource(R.string.products_error_message),
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold
         )
@@ -168,7 +170,7 @@ fun ErrorContent(
         )
         Spacer(modifier = Modifier.height(24.dp))
         Button(onClick = onRetry) {
-            Text("Reintentar")
+            Text(stringResource(R.string.common_retry))
         }
     }
 }

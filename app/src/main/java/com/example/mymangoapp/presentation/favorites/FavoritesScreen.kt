@@ -8,11 +8,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.mymangoapp.presentation.products.ProductCard
+import com.example.mymangoapp.R
 
 @Composable
 fun FavoritesScreen(
@@ -29,7 +31,10 @@ fun FavoritesScreen(
         ) {
             item {
                 Text(
-                    text = "${favorites.size} producto(s) guardado(s)",
+                    text = stringResource(
+                        R.string.favorites_products_saved,
+                        favorites.size
+                    ),
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(bottom = 4.dp)
@@ -57,13 +62,13 @@ private fun EmptyFavorites() {
         Text(text = "🤍", style = MaterialTheme.typography.displayLarge)
         Spacer(modifier = Modifier.height(16.dp))
         Text(
-            text = "Sin favoritos aún",
+            text = stringResource(R.string.favorites_empty_message_yet),
             style = MaterialTheme.typography.titleLarge,
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = "Añade productos a favoritos pulsando el corazón",
+            text = stringResource(R.string.favorites_empty_message),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
